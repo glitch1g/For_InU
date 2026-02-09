@@ -2104,7 +2104,7 @@
       transition: all 0.3s ease;
       animation: slideInRight 0.5s ease;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .catatan-item::before {
@@ -2288,9 +2288,10 @@
       padding: 8px;
       min-width: 150px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      z-index: 100;
+      z-index: 1000;
       display: none;
       animation: slideDown 0.3s ease;
+      margin-top: 5px;
     }
 
     .catatan-dropdown.show {
@@ -2335,6 +2336,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       display: none;
       margin-left: 5px;
+      z-index: 1001;
     }
 
     .catatan-dropdown-item.has-submenu:hover .catatan-submenu {
