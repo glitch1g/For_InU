@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#0a0a0c" />
-  <title>Happy 1 Month Anniversary ❤</title>
+  <title>Perjalanan Kami ❤</title>
   <style>
     * { 
       box-sizing: border-box; 
@@ -2649,15 +2649,15 @@
   <div class="container">
     <!-- ============ HEADER ============ -->
     <div class="header">
-      <h1 class="main-title" id="mainTitle">Untuk Kamu, Sayangku ❤</h1>
-      <p class="subtitle">Happy 1 Month Anniversary!</p>
-      <p class="date" id="dateDisplay">9 Januari - 9 Februari 2026</p>
+      <h1 class="main-title" id="mainTitle">Our Journey Together ❤</h1>
+      <p class="subtitle">Setiap Hari Adalah Petualangan Baru</p>
+      <p class="date" id="dateDisplay">Perjalanan Tanpa Akhir ✨</p>
     </div>
 
     <!-- ============ STATS ============ -->
     <div class="stats">
       <div class="stat" data-stat="days">
-        <div class="stat-number">32</div>
+        <div class="stat-number">0</div>
         <div class="stat-label">Hari Bersama</div>
       </div>
       <div class="stat" data-stat="memories">
@@ -2672,34 +2672,10 @@
 
     <!-- ============ MAIN MENU ============ -->
     <div class="menu-grid" id="menu">
-      <div class="menu-card" onclick="openSection('surat')">
-        <span class="menu-icon">💌</span>
-        <h3 class="menu-title">Surat Cinta</h3>
-        <p class="menu-desc">Perasaan dari hati</p>
-      </div>
-
-      <div class="menu-card" onclick="openSection('alasan')">
-        <span class="menu-icon">💕</span>
-        <h3 class="menu-title">Kenapa Aku Cinta</h3>
-        <p class="menu-desc">Hal yang membuatku jatuh cinta</p>
-      </div>
-
-      <div class="menu-card" onclick="openSection('kenangan')">
-        <span class="menu-icon">📸</span>
-        <h3 class="menu-title">Kenangan Kita</h3>
-        <p class="menu-desc">Momen-momen spesial</p>
-      </div>
-
-      <div class="menu-card" onclick="openSection('timeline')">
-        <span class="menu-icon">⏰</span>
-        <h3 class="menu-title">Timeline</h3>
-        <p class="menu-desc">Perjalanan cinta kita</p>
-      </div>
-
-      <div class="menu-card" onclick="openSection('galeri')">
-        <span class="menu-icon">🎨</span>
-        <h3 class="menu-title">Galeri</h3>
-        <p class="menu-desc">Koleksi emoji favorit</p>
+      <div class="menu-card" onclick="openSection('anniversary')">
+        <span class="menu-icon">🎉</span>
+        <h3 class="menu-title">Milestones</h3>
+        <p class="menu-desc">Momen-momen spesial kita</p>
       </div>
 
       <div class="menu-card" onclick="openSection('game')">
@@ -2713,11 +2689,73 @@
         <h3 class="menu-title">Catatan Bersama</h3>
         <p class="menu-desc">Tulis & bagikan catatan real-time</p>
       </div>
+    </div>
 
-      <div class="menu-card" onclick="openSection('penutup')">
-        <span class="menu-icon">💝</span>
-        <h3 class="menu-title">Penutup</h3>
-        <p class="menu-desc">Pesan spesial</p>
+    <!-- ============ ANNIVERSARY MENU ============ -->
+    <div class="section" id="anniversary">
+      <div class="section-header">
+        <button class="back-btn" onclick="goBack()">
+          <span>←</span>
+          <span>Kembali</span>
+        </button>
+        <h2 class="section-title">🎉 Milestones</h2>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card" onclick="openSection('onemonth')">
+          <span class="menu-icon">💕</span>
+          <h3 class="menu-title">1 Month</h3>
+          <p class="menu-desc">9 Jan - 9 Feb 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 1 MONTH ANNIVERSARY SUB-MENU ============ -->
+    <div class="section" id="onemonth">
+      <div class="section-header">
+        <button class="back-btn" onclick="goBack()">
+          <span>←</span>
+          <span>Kembali</span>
+        </button>
+        <h2 class="section-title">💕 1 Month Anniversary</h2>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card" onclick="openSection('surat')">
+          <span class="menu-icon">💌</span>
+          <h3 class="menu-title">Surat Untuk Kamu</h3>
+          <p class="menu-desc">Perasaan dari hati</p>
+        </div>
+
+        <div class="menu-card" onclick="openSection('alasan')">
+          <span class="menu-icon">💕</span>
+          <h3 class="menu-title">Kenapa Aku Cinta</h3>
+          <p class="menu-desc">Hal yang membuatku jatuh cinta</p>
+        </div>
+
+        <div class="menu-card" onclick="openSection('kenangan')">
+          <span class="menu-icon">📸</span>
+          <h3 class="menu-title">Momen Spesial</h3>
+          <p class="menu-desc">Kenangan bulan pertama</p>
+        </div>
+
+        <div class="menu-card" onclick="openSection('timeline')">
+          <span class="menu-icon">⏰</span>
+          <h3 class="menu-title">Timeline Kita</h3>
+          <p class="menu-desc">Perjalanan 32 hari pertama</p>
+        </div>
+
+        <div class="menu-card" onclick="openSection('galeri')">
+          <span class="menu-icon">🎨</span>
+          <h3 class="menu-title">Galeri Emoji</h3>
+          <p class="menu-desc">Koleksi emoji favorit kita</p>
+        </div>
+
+        <div class="menu-card" onclick="openSection('penutup')">
+          <span class="menu-icon">💝</span>
+          <h3 class="menu-title">Pesan Spesial</h3>
+          <p class="menu-desc">Surat terakhir untukmu</p>
+        </div>
       </div>
     </div>
 
@@ -2728,7 +2766,7 @@
           <span>←</span>
           <span>Kembali</span>
         </button>
-        <h2 class="section-title">💌 Surat Cinta</h2>
+        <h2 class="section-title">💌 Surat Untuk Kamu</h2>
       </div>
 
       <div class="content-card">
@@ -2786,7 +2824,7 @@
           <span>←</span>
           <span>Kembali</span>
         </button>
-        <h2 class="section-title">📸 Kenangan Kita</h2>
+        <h2 class="section-title">📸 Momen Spesial</h2>
       </div>
 
       <div class="content-card">
@@ -2853,7 +2891,7 @@
           <span>←</span>
           <span>Kembali</span>
         </button>
-        <h2 class="section-title">⏰ Timeline Cinta Kita</h2>
+        <h2 class="section-title">⏰ Timeline Kita</h2>
       </div>
 
       <div class="content-card">
@@ -3378,7 +3416,7 @@
         <p class="final-message">I LOVE YOU</p>
 
         <div class="quote">
-          "32 hari baru permulaan. Masih banyak hari, bulan, dan tahun yang akan kita lalui bersama. Terima kasih udah jadi bagian dari hidup cowok ganteng ini 😎. Happy 1 Month Anniversary, Sayang!"
+          "Setiap hari bersamamu adalah petualangan baru. Masih banyak hari, bulan, dan tahun yang akan kita lalui bersama. Terima kasih udah jadi bagian dari hidup cowok ganteng ini 😎. Mari kita terus berjalan bersama, Sayang!"
         </div>
 
         <p class="signature">Dengan cinta,<br>Pacarmu yang paling ganteng ❤️</p>
@@ -3482,7 +3520,20 @@
     const mainTitle = document.getElementById('mainTitle');
 
     // ============ AUTO-UPDATE DAYS COUNTER ============
-    // Fitur auto-update days counter dihapus, sekarang menggunakan angka tetap 32 hari
+    function updateDaysCounter() {
+      const now = new Date();
+      const diffTime = Math.abs(now - RELATIONSHIP_START_DATE);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      const daysElement = document.querySelector('[data-stat="days"] .stat-number');
+      if (daysElement) {
+        daysElement.textContent = diffDays;
+      }
+    }
+    
+    // Update immediately and then every hour
+    updateDaysCounter();
+    setInterval(updateDaysCounter, 3600000); // Update setiap 1 jam
 
     // ============ BACKGROUND PARTICLES ============
     function createParticles() {
@@ -3708,9 +3759,13 @@
     document.addEventListener('click', (e) => {
       clickCount++;
 
-      // 32 clicks = 32 hari
-      if (clickCount === 32) {
-        showNotification('🎊 32 Clicks = 32 Hari Bersama! 💕');
+      // Clicks sama dengan jumlah hari bersama
+      const now = new Date();
+      const diffTime = Math.abs(now - RELATIONSHIP_START_DATE);
+      const currentDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      if (clickCount === currentDays) {
+        showNotification(`🎊 ${currentDays} Clicks = ${currentDays} Hari Bersama! 💕`);
         createMassiveConfetti();
       }
 
@@ -3782,8 +3837,14 @@
     document.querySelectorAll('.stat').forEach(stat => {
       stat.addEventListener('click', function() {
         const type = this.dataset.stat;
+        
+        // Get current days dynamically
+        const now = new Date();
+        const diffTime = Math.abs(now - RELATIONSHIP_START_DATE);
+        const currentDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
         const messages = {
-          days: '📅 32 hari yang unforgettable!',
+          days: `📅 ${currentDays} hari yang unforgettable!`,
           memories: '💭 Setiap detik bersamamu adalah kenangan!',
           love: '❤️ Love meter: MAXIMUM!'
         };
@@ -3847,7 +3908,7 @@
     const secretWords = {
       'iloveyou': '💕 I Love You Too! Forever and always! 💕',
       'sayang': '❤️ Sayang banget sama kamu juga! ❤️',
-      'anniversary': '🎉 Happy Anniversary sayangku! 🎊',
+      'journey': '✨ Perjalanan indah kita bersama! 🎊',
       'forever': '♾️ Forever and ever, my love! ♾️',
       'kiss': '💋 *Sending virtual kisses* 💋',
       'hug': '🤗 *Big warm hug for you* 🫂'
@@ -3965,7 +4026,7 @@
           subtitle.textContent = '✨ You found me! ✨';
           createConfetti();
           setTimeout(() => {
-            subtitle.textContent = 'Happy 1 Month Anniversary ❤';
+            subtitle.textContent = 'Setiap Hari Adalah Petualangan Baru';
             hoverCount = 0;
           }, 2000);
         }
@@ -4075,12 +4136,35 @@
     }
 
     // ============ SECTION NAVIGATION ============
+    // Navigation history stack
+    const navigationHistory = [];
+
     function openSection(id) {
-      document.getElementById('menu').style.animation = 'fadeOut 0.4s ease forwards';
+      // Save current view to history
+      const currentView = document.querySelector('.section.active, #menu[style*="display: grid"]');
+      if (currentView) {
+        if (currentView.id === 'menu') {
+          navigationHistory.push('menu');
+        } else {
+          navigationHistory.push(currentView.id);
+        }
+      }
+
+      // Hide current view
+      if (document.getElementById('menu').style.display !== 'none') {
+        document.getElementById('menu').style.animation = 'fadeOut 0.4s ease forwards';
+      }
+      document.querySelectorAll('.section.active').forEach(s => {
+        s.style.animation = 'fadeOut 0.4s ease forwards';
+      });
       
       setTimeout(() => {
         document.getElementById('menu').style.display = 'none';
-        document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+        document.querySelectorAll('.section').forEach(s => {
+          s.style.display = 'none';
+          s.classList.remove('active');
+        });
+        
         const sec = document.getElementById(id);
         sec.style.display = 'block';
         sec.classList.add('active');
@@ -4093,6 +4177,10 @@
     }
 
     function goBack() {
+      // Get previous view from history
+      const previousView = navigationHistory.pop();
+      
+      // Hide current view
       document.querySelectorAll('.section').forEach(s => {
         s.style.animation = 'fadeOut 0.4s ease forwards';
       });
@@ -4105,9 +4193,17 @@
           s.querySelectorAll('p, h3, .quote, .love-list li, .timeline-item, .gallery-item, .memory-card').forEach(el => el.classList.remove('show'));
         });
         
-        const menu = document.getElementById('menu');
-        menu.style.display = 'grid';
-        menu.style.animation = 'fadeInUp 0.6s ease forwards';
+        // Show previous view
+        if (previousView === 'menu' || !previousView) {
+          const menu = document.getElementById('menu');
+          menu.style.display = 'grid';
+          menu.style.animation = 'fadeInUp 0.6s ease forwards';
+        } else {
+          const sec = document.getElementById(previousView);
+          sec.style.display = 'block';
+          sec.classList.add('active');
+          sec.style.animation = 'fadeInUp 0.6s ease forwards';
+        }
       }, 400);
     }
 
@@ -4198,7 +4294,7 @@
       }
       
       createMassiveConfetti();
-      showNotification('❤️ I LOVE YOU TOO! Happy Anniversary! 🎉');
+      showNotification('❤️ I LOVE YOU TOO! Selamanya! 🎉');
     }
 
     function createConfetti() {
@@ -5087,7 +5183,7 @@
       "Bikin TikTok/Reels couple challenge dan tag aku",
       "Tulis surat cinta singkat dengan tulisan tangan",
       "Kirim foto makanan favorit kamu dan bilang 'tapi kamu lebih sweet'",
-      "Record kamu nyanyi lagu 'Happy Anniversary'",
+      "Record kamu nyanyi lagu favorit kita",
       "Bikin video editan foto kita berdua (simple aja)",
       "Kirim 10 emoji yang menggambarkan perasaanmu ke aku",
       "Screenshot lockscreen HP kamu dan kirim",
@@ -5359,10 +5455,10 @@
     document.addEventListener('click', enableAudioOnInteraction);
     document.addEventListener('touchstart', enableAudioOnInteraction);
 
-    console.log('%c🎉 HAPPY 1 MONTH ANNIVERSARY! 🎉', 'color: #ff6b6b; font-size: 20px; font-weight: bold;');
+    console.log('%c✨ OUR JOURNEY TOGETHER! ✨', 'color: #ff6b6b; font-size: 20px; font-weight: bold;');
     console.log('%cEaster eggs:', 'color: #7aa2ff; font-size: 14px;');
     console.log('1. 🖱️ Klik judul 5x');
-    console.log('2. 🖱️ Klik 32x (32 hari!)');
+    console.log('2. 🖱️ Klik sesuai hari bersama untuk surprise!');
     console.log('3. 🖱️ Klik 50x untuk cursor trail');
     console.log('4. 🖱️ Klik 100x untuk rainbow mode (klik 100x lagi untuk off)');
     console.log('5. ⌨️ Konami code: ↑↑↓↓←→←→BA');
@@ -5371,7 +5467,7 @@
     console.log('8. 🖼️ Click gallery items');
     console.log('9. 🖱️ Triple click anywhere');
     console.log('10. 📳 Shake device (mobile)');
-    console.log('11. ⌨️ Type: iloveyou, sayang, anniversary, forever, kiss, hug');
+    console.log('11. ⌨️ Type: iloveyou, sayang, journey, forever, kiss, hug');
     console.log('12. 🖱️ Long press on title (2 detik)');
     console.log('13. 📜 Scroll banyak-banyak');
     console.log('14. 🎯 Click stats urut: Days → Memories → Love');
@@ -5383,7 +5479,8 @@
     console.log('20. 💌 Surat Terakhir dengan password di menu Penutup');
     console.log('%c⌨️ SHORTCUT: Tekan ESC untuk toggle Rainbow Mode ON/OFF', 'color: #ffd93d; font-weight: bold;');
     console.log('%c💌 SPECIAL: Cari Surat Terakhir di menu Penutup - butuh kata kunci!', 'color: #ff6b9d; font-weight: bold;');
-    console.log('%cDibuat dengan ❤️ untuk anniversary 1 bulan kita', 'color: #9b7dff; font-style: italic;');
+    console.log('%cDibuat dengan ❤️ untuk perjalanan kita bersama', 'color: #9b7dff; font-style: italic;');
+
 
   </script>
 
