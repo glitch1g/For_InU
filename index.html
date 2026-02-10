@@ -2068,6 +2068,24 @@
       opacity: 0.5;
     }
 
+    .char-counter {
+      text-align: right;
+      font-size: 13px;
+      opacity: 0.7;
+      margin: 8px 5px;
+      color: var(--light);
+    }
+
+    .char-counter.warning {
+      color: #ffaa00;
+      font-weight: bold;
+    }
+
+    .char-counter.danger {
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+
     .catatan-submit-btn {
       padding: 12px 30px;
       border-radius: 25px;
@@ -3317,8 +3335,11 @@
                 id="catatanText" 
                 class="catatan-textarea" 
                 placeholder="Tulis catatan, pesan, atau apapun yang ingin kamu bagikan... 💭"
-                maxlength="500"
+                maxlength="2000"
               ></textarea>
+              <div class="char-counter" id="catatanCharCounter">
+                <span id="catatanCharCount">0</span> / 2000 karakter
+              </div>
               <button class="catatan-submit-btn" onclick="addCatatan()">
                 📤 Kirim Catatan
               </button>
@@ -5814,8 +5835,8 @@
       return;
     }
     
-    if (text.length > 500) {
-      showNotification('⚠️ Catatan terlalu panjang! Maksimal 500 karakter.');
+    if (text.length > 2000) {
+      showNotification('⚠️ Catatan terlalu panjang! Maksimal 2000 karakter.');
       return;
     }
     
@@ -5835,6 +5856,12 @@
       
       // Clear textarea
       textarea.value = '';
+      
+      // Reset character counter
+      const charCount = document.getElementById('catatanCharCount');
+      const charCounter = document.getElementById('catatanCharCounter');
+      if (charCount) charCount.textContent = '0';
+      if (charCounter) charCounter.classList.remove('warning', 'danger');
       
       // Save author preference to localStorage
       localStorage.setItem('lastCatatanAuthor', author);
@@ -6220,7 +6247,10 @@
             <h3>📝 Edit Catatan</h3>
             <button class="edit-modal-close" onclick="this.closest('.edit-modal').remove()">×</button>
           </div>
-          <textarea class="edit-modal-textarea" id="editText-${id}" maxlength="500">${escapeHtml(data.text)}</textarea>
+          <textarea class="edit-modal-textarea" id="editText-${id}" maxlength="2000">${escapeHtml(data.text)}</textarea>
+          <div class="char-counter" id="editCharCounter-${id}">
+            <span id="editCharCount-${id}">${data.text.length}</span> / 2000 karakter
+          </div>
           <div class="edit-modal-actions">
             <button class="edit-modal-btn cancel" onclick="this.closest('.edit-modal').remove()">Batal</button>
             <button class="edit-modal-btn save" onclick="saveCatatanText('${id}')">💾 Simpan</button>
@@ -6231,7 +6261,28 @@
       document.body.appendChild(modal);
       
       // Focus textarea
-      document.getElementById('editText-' + id).focus();
+      const editTextarea = document.getElementById('editText-' + id);
+      const editCharCount = document.getElementById('editCharCount-' + id);
+      const editCharCounter = document.getElementById('editCharCounter-' + id);
+      
+      editTextarea.focus();
+      
+      // Add character counter update
+      editTextarea.addEventListener('input', () => {
+        const length = editTextarea.value.length;
+        editCharCount.textContent = length;
+        
+        // Change color based on length
+        if (length >= 1800) {
+          editCharCounter.classList.add('danger');
+          editCharCounter.classList.remove('warning');
+        } else if (length >= 1500) {
+          editCharCounter.classList.add('warning');
+          editCharCounter.classList.remove('danger');
+        } else {
+          editCharCounter.classList.remove('warning', 'danger');
+        }
+      });
       
       // Close on backdrop click
       modal.addEventListener('click', (e) => {
@@ -6250,8 +6301,8 @@
       return;
     }
     
-    if (newText.length > 500) {
-      showNotification('⚠️ Catatan terlalu panjang! Maksimal 500 karakter.');
+    if (newText.length > 2000) {
+      showNotification('⚠️ Catatan terlalu panjang! Maksimal 2000 karakter.');
       return;
     }
     
@@ -6299,7 +6350,28 @@
   // Enter key untuk submit catatan
   document.addEventListener('DOMContentLoaded', () => {
     const catatanTextarea = document.getElementById('catatanText');
+    const charCount = document.getElementById('catatanCharCount');
+    const charCounter = document.getElementById('catatanCharCounter');
+    
     if (catatanTextarea) {
+      // Update character counter
+      catatanTextarea.addEventListener('input', () => {
+        const length = catatanTextarea.value.length;
+        charCount.textContent = length;
+        
+        // Change color based on length
+        if (length >= 1800) {
+          charCounter.classList.add('danger');
+          charCounter.classList.remove('warning');
+        } else if (length >= 1500) {
+          charCounter.classList.add('warning');
+          charCounter.classList.remove('danger');
+        } else {
+          charCounter.classList.remove('warning', 'danger');
+        }
+      });
+      
+      // Ctrl/Cmd + Enter untuk submit
       catatanTextarea.addEventListener('keydown', (e) => {
         // Ctrl/Cmd + Enter untuk submit
         if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
