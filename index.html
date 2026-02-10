@@ -7072,27 +7072,6 @@
     });
   }
   
-  // Open folder manager modal
-
-            id: child.key,
-            ...child.val()
-          });
-        });
-        
-        // Sort alphabetically
-        folders.sort((a, b) => a.name.localeCompare(b.name));
-        
-        // Add options
-        folders.forEach(folder => {
-          const option = document.createElement('option');
-          option.value = folder.id;
-          option.textContent = `📁 ${folder.name}`;
-          folderSelect.appendChild(option);
-        });
-      }
-    });
-  }
-
   // ============================================
   // 🔧 QUICK FOLDER ADD FUNCTIONS
   // ============================================
